@@ -186,3 +186,20 @@ print("\nMonthly Profit:")
 print(monthly_profit) 
 
 
+#Category Sales Chart
+plt.figure(figsize=(10, 6))
+
+category_sales.plot(kind="bar")
+
+plt.title("Sales by Category")
+plt.xlabel("Category")
+plt.ylabel("Sales Amount")
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.savefig(
+    "C:/Users/Anupama/OneDrive/Desktop/ecommerce-sales-analysis/outputs/charts/sales_by_category.png"
+)
+
+plt.show()
