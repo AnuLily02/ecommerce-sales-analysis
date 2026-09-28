@@ -203,3 +203,86 @@ plt.savefig(
 )
 
 plt.show()
+
+
+#Monthly sales chart
+plt.figure(figsize=(10, 6))
+
+monthly_sales.plot(kind="line", marker="o")
+
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Sales Amount")
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.savefig(
+    "C:/Users/Anupama/OneDrive/Desktop/ecommerce-sales-analysis/outputs/charts/monthly_sales.png"
+)
+
+plt.show()
+
+#Payment-method chart
+
+plt.figure(figsize=(8, 5))
+
+payment_analysis.plot(kind="bar")
+
+plt.title("Orders by Payment Method")
+plt.xlabel("Payment Method")
+plt.ylabel("Number of Orders")
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.savefig(
+     "C:/Users/Anupama/OneDrive/Desktop/ecommerce-sales-analysis/outputs/charts/payment_methods.png"
+)
+
+plt.show()
+
+#Top 10 cities chart
+plt.figure(figsize=(10, 6))
+
+city_sales.head(10).plot(kind="bar")
+
+plt.title("Top 10 Cities by Sales")
+plt.xlabel("City")
+plt.ylabel("Sales Amount")
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.savefig(
+    "C:/Users/Anupama/OneDrive/Desktop/ecommerce-sales-analysis/outputs/charts/top_10_cities.png"
+)
+
+plt.show()
+
+#Profit by category
+category_profit = (
+    df.groupby("Category")["Profit"]
+    .sum()
+    .sort_values(ascending=False)
+)
+
+print("\nProfit by Category:")
+print(category_profit)
+
+plt.figure(figsize=(10, 6))
+
+category_profit.plot(kind="bar")
+
+plt.title("Profit by Category")
+plt.xlabel("Category")
+plt.ylabel("Profit")
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.savefig(
+    "C:/Users/Anupama/OneDrive/Desktop/ecommerce-sales-analysis/outputs/charts/profit_by_category.png"
+)
+
+plt.show()
